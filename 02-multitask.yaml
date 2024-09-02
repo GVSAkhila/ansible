@@ -1,6 +1,7 @@
-- name: PLAY-01
-  hosts: web
-  tasks: PLAY-01 and Task-01
-  - name:
-    ansible.builtin.debug:
-     msg: "This play-01 and Task-01"
+---
+- name: PLAY-01  # Playbook name
+  hosts: web     # Replace 'web' with your actual group of hosts from the inventory
+  tasks:
+    - name: PLAY-01 and Task-01  # Task name
+      ansible.builtin.debug:
+        msg: "This is PLAY-01 and Task-01"
