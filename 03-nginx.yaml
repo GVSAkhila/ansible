@@ -7,7 +7,7 @@
         name: nginx
         state: present
     
-    - name: ru the nginx
+    - name: run the nginx
       ansible.builtin.package:
       name: nginx
       state: started
