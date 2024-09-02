@@ -1,8 +1,10 @@
 - name: Print the variables
   hosts: web
   vars_files:
-    - vars.yaml  # Ensure this file contains the variables COURSE, Duration, and Trainer
+    - varis.yaml  # Ensure this file contains the variables COURSE, Duration, and Trainer
   tasks:
-    - name: Print the variable from vars file
+    - name: Print the variable from varis file
       ansible.builtin.debug:
         msg: "Course: {{ COURSE }}, Duration: {{ Duration }}, Trainer: {{ Trainer }}"
+
+
