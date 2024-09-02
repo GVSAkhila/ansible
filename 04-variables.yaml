@@ -1,10 +1,11 @@
-- name: print the varibales
-  hosts: web
+---
+- name: Print the variables
+  hosts: web  # Replace 'web' with your actual group of hosts from the inventory
   vars:
-  course: "Devops with aws"
-  Duration: "120 hours"
-  Tainer: "siva shankar"
+    course: "DevOps with AWS"
+    duration: "120 hours"
+    trainer: "Siva Shankar"
   tasks:
-  - name: print the information
-    ansible.builtin.debug:
-     msg: "I am learning {{course}}, Duration:{{Duration}},trainer:{{Tainer}}"
+    - name: Print the information
+      ansible.builtin.debug:
+        msg: "I am learning {{ course }}, Duration: {{ duration }}, Trainer: {{ trainer }}"
