@@ -1,7 +1,8 @@
-- name: install and run nginx
-  hosts: web
+- name: Install and run Nginx
+  hosts: web  # Replace 'web' with your actual group of hosts from the inventory
+  become: true  # Elevate privileges to install packages
   tasks: 
-  -name: install and run nginx
-   ansible.builtin.package:
-   name: nginx
-    state: prasent
+    - name: Install Nginx
+      ansible.builtin.package:
+        name: nginx
+        state: present
