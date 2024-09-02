@@ -1,0 +1,5 @@
+- name: ping the server
+  host : backend #which server you want  connect
+  tasks: # which task you can perform
+  - name: ping ther server
+    ansible.builtin.ping:
