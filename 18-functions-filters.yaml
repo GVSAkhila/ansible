@@ -19,3 +19,8 @@
       msg: "Hello {{ greetings | lower }}" 
        
  
+   - name: Uniq number
+     vars:
+      number: [1 2 3 45 5 4 3 2 1]
+     ansible.builtin.debug:
+      msg: "Hello {{ number | uniqe }}" 
