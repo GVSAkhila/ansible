@@ -4,6 +4,6 @@
   tasks:
    - name: print the varibles on un defined
      ansible.builtin.debug:
-       msg: "Hello {{ Course | default (Ansible) }}"
+       msg: "Hello {{ Course | default ('Ansible') }}"
 
  
