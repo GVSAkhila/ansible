@@ -30,4 +30,12 @@
      vars:
       number: [1, 2, 3, 45, 5, 4, 3, 2, 11]
      ansible.builtin.debug:
-      msg: "{{ number | max }}"       
+      msg: "{{ number | max }}"  
+
+
+
+   - name: min number
+     vars:
+      number: [1, 2, 3, 45, 5, 4, 3, 2, 11]
+     ansible.builtin.debug:
+      msg: "{{ number | min }}"   
