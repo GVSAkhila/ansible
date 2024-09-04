@@ -1,0 +1,6 @@
+- name: demo on functions are filters
+  hosts: local
+  tasks:
+   - name: print the varibles on un defined
+     ansible.bulitin.debug:
+     msg: " Hello {{Course}} | Ansible"
