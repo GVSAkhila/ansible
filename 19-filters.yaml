@@ -1,17 +1,21 @@
-- name: convert map to list
-  vars:
-   course:
-    name: "DevOps with AWS"
-    duration: 120
-    trainer: "sivakumar reddy"
-  ansible.builtin.debug:
-    msg: "{{ course | dict2items }}"
+- name: Demo on converting map to list and list to map
+  hosts: local
+  connection: local
+  tasks:
+    - name: Convert dictionary to list of items
+      vars:
+        course:
+          name: "DevOps with AWS"
+          duration: 120
+          trainer: "sivakumar reddy"
+      ansible.builtin.debug:
+        msg: "{{ course | dict2items }}"
 
-- name: convert list to map
-  vars:
-   course:
-    - { "key": "name","value": "DevOps with AWS" }
-    - { "key": "duration","value": 120 }
-    - { "key": "trainer","value": "sivakumar reddy" }
-  ansible.builtin.debug:
-   msg: "{{ course | items2dict }}"
+    - name: Convert list of items to dictionary
+      vars:
+        course:
+          - { "key": "name", "value": "DevOps with AWS" }
+          - { "key": "duration", "value": 120 }
+          - { "key": "trainer", "value": "sivakumar reddy" }
+      ansible.builtin.debug:
+        msg: "{{ course | items2dict }}"
