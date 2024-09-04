@@ -9,7 +9,7 @@
    - name: print upercase
      vars:
       greetins: Sankar
-    ansible.builtin.debug:
+     ansible.builtin.debug:
       msg: "Hello {{ vars | upper }}" 
        
 
