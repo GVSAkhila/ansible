@@ -19,8 +19,15 @@
       msg: "Hello {{ greetings | lower }}" 
        
  
-   - name: Uniq number
+   - name: Unique number
      vars:
       number: [1, 2, 3, 45, 5, 4, 3, 2, 11]
      ansible.builtin.debug:
       msg: "{{ number | unique }}" 
+
+
+   - name: max number
+     vars:
+      number: [1, 2, 3, 45, 5, 4, 3, 2, 11]
+     ansible.builtin.debug:
+      msg: "{{ number | max }}"       
