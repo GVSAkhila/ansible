@@ -42,7 +42,7 @@
 
 
    - name: Convert map to list
-      vars:
+     vars:
         course:
           name: "DevOps with AWS"
           duration: 120
