@@ -1,5 +1,6 @@
 - name: demo on functions are filters
   hosts: local
+  connection: local
   tasks:
    - name: print the varibles on un defined
      ansible.bulitin.debug:
