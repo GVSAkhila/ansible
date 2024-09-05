@@ -5,6 +5,7 @@
    subnet_id: "subnet-0702410f643aaa623"
    sg_id:     "sg-03febb88e29aa29cd"
    ami_id:    "ami-09c813fb71547fc4f"
+   zone:      "joinsankardevops.online"
    instances:
     - mysql
     - frontend
@@ -22,5 +23,19 @@
 
    - name : print the ec2-instances
      ansible.builtin.debug:
-      msg: "{{ ec2_instances }}" 
+      msg: "{{ ec2_instances }}"
+   
+   - name: create R53 records:
+     community.aws.route53:
+      zone: "{{ zone }}"
+      state: present  
+      type:  A
+      record: "{{ item.item }}.{{ zone }}"
+      value: {{ item.instances[0].public_ip_address }}"
+      ttl: 1
+      wait: true
+      overwrite: true
+     loop: "{{ ec2_instances.results }}" 
+
+
  
