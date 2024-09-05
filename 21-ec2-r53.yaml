@@ -2,9 +2,9 @@
   hosts: local
   connection: local
   vars:
-   subnet_id:
-   sg_id:
-   ami_id:
+   subnet_id: "subnet-0702410f643aaa623"
+   sg_id:     "sg-03febb88e29aa29cd"
+   ami_id:    "ami-09c813fb71547fc4f"
    instances:
     - mysql
     - frontend
@@ -13,10 +13,10 @@
    - name: create ec2 instance
      amazon.aws.ec2_instance:
       name: "{{ iteam }}"
-       vpc_subnet_id: "{{ subnet_id }}"
-       instance_type: "t3.micro"
-       security_group: "{{ sg_id }}"
-       image_id:        "{{ ami_id }}"
-    loop: "{{ instances }}"   
-    register: ec2_instances
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: "t3.micro"
+      security_group: "{{ sg_id }}"
+      image_id:        "{{ ami_id }}"
+     loop: "{{ instances }}"   
+     register: ec2_instances
  
