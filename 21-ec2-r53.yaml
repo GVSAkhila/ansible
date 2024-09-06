@@ -6,16 +6,17 @@
    sg_id:     "sg-03febb88e29aa29cd"
    ami_id:    "ami-09c813fb71547fc4f"
    zone:      "joinsankardevops.online"
-  tasks: ansible install the  boto3 and botocore
-  ansible.builtin.pip:
-   name:
-    - boto3
-    - botocore
    instances:
     - mysql
     - frontend
     - backend
   tasks:
+   - name: ansible install the  boto3 and botocore
+     ansible.builtin.pip:
+     name:
+    - boto3
+    - botocore
+    
    - name: create ec2 instance
      amazon.aws.ec2_instance:
       name: "{{ item }}"
