@@ -41,11 +41,4 @@
       msg: "{{ number | min }}"   
 
 
-   - name: Convert map to list
-     vars:
-        course:
-          name: "DevOps with AWS"
-          duration: 120
-          trainer: "sivakumar reddy"
-      ansible.builtin.debug:
-         msg: "{{ course | dict2items }}" 
+ 

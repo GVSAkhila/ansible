@@ -1,5 +1,5 @@
 - name: Given number less than 10 or not
-  hosts: localhost  # Corrected 'host' to 'hosts' and 'local' to 'localhost'
+  hosts: local  # Corrected 'host' to 'hosts' and 'local' to 'localhost'
   connection: local
   vars_prompt:  # Corrected 'vars_promt' to 'vars_prompt'
     - name: number

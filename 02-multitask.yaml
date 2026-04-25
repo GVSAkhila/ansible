@@ -12,3 +12,5 @@
     - name: PLAY-01 and Task-01  # Task name
       ansible.builtin.debug:
         msg: "This is PLAY-01 and Task-02"
+        
+        ##########
