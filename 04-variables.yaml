@@ -9,3 +9,5 @@
     - name: Print the information
       ansible.builtin.debug:
         msg: "I am learning {{ course }}, Duration: {{ duration }}, Trainer: {{ trainer }}"
+
+        #####################
